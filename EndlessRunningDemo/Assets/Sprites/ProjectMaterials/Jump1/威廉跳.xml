@@ -1,0 +1,7 @@
+﻿<TextureAtlas imagePath="威廉跳.png">
+	<SubTexture name="元件 10000" x="0" y="0" w="263" h="552"/>
+	<SubTexture name="元件 10001" x="263" y="0" w="263" h="552"/>
+	<SubTexture name="元件 10002" x="526" y="0" w="263" h="552"/>
+	<SubTexture name="元件 10003" x="0" y="552" w="263" h="552"/>
+	<SubTexture name="元件 10004" x="0" y="0" w="263" h="552"/>
+</TextureAtlas>
