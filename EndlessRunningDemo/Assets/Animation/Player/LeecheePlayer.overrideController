@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: LeecheePlayer
+  m_Controller: {fileID: 9100000, guid: 1363943d7fbc446a391b38f637954204, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: becea423d401d419cb8d7273f5c1b2f7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 49c2cc0d0aa09be459ce1a5222b2cd1a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e60fce7f5a58a486f93ec2a1b7c69b7c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6284e057c9c640346ae9616653f425f3, type: 2}
