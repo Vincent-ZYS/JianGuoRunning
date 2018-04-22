@@ -9,12 +9,14 @@ public class RandomBackgroundObject : MonoBehaviour
     private GameObject[] groupPool3;
     private GameObject[] groupPool4;
     private GameObject[] groupPool5;
+    private GameObject[] groupPool6;
+    private GameObject[] groupPool7;
 
     private int poolsize = 3;
     private int currentColumn = 0;
     private int groupLastNum;
     private float timeSinceLastSpawned2;
-    private float groupspawnXposition = 19.0f;
+    private float groupspawnXposition = 22.0f;
     private Vector2 objectPoolPosition = new Vector2(-15.0f, -25.0f);
 
     public GameObject group1;
@@ -22,6 +24,8 @@ public class RandomBackgroundObject : MonoBehaviour
     public GameObject group3;
     public GameObject group4;
     public GameObject group5;
+    public GameObject group6;
+    public GameObject group7;
 
     public int groupObjectNumber = 2;
     public float groupSpawnRate = 12.0f;
@@ -33,14 +37,18 @@ public class RandomBackgroundObject : MonoBehaviour
         groupPool3 = new GameObject[poolsize];
         groupPool4 = new GameObject[poolsize];
         groupPool5 = new GameObject[poolsize];
+        groupPool6 = new GameObject[poolsize];
+        groupPool7 = new GameObject[poolsize];
 
         for (int i = 0; i < poolsize; i++)
         {
             groupPool1[i] = Object.Instantiate(group1, objectPoolPosition, Quaternion.identity);
             groupPool2[i] = Object.Instantiate(group2, objectPoolPosition, Quaternion.identity);
             groupPool3[i] = Object.Instantiate(group3, objectPoolPosition, Quaternion.identity);
-            groupPool4[i] = Object.Instantiate(group3, objectPoolPosition, Quaternion.identity);
-            groupPool5[i] = Object.Instantiate(group3, objectPoolPosition, Quaternion.identity);
+            groupPool4[i] = Object.Instantiate(group4, objectPoolPosition, Quaternion.identity);
+            groupPool5[i] = Object.Instantiate(group5, objectPoolPosition, Quaternion.identity);
+            groupPool6[i] = Object.Instantiate(group6, objectPoolPosition, Quaternion.identity);
+            groupPool7[i] = Object.Instantiate(group7, objectPoolPosition, Quaternion.identity);
         }
     }
 
@@ -58,6 +66,7 @@ public class RandomBackgroundObject : MonoBehaviour
 
     private void RandomGroupObject(int randomNum)
     {
+
         if (randomNum == 1)
         {
             if (groupLastNum == randomNum)
@@ -114,13 +123,37 @@ public class RandomBackgroundObject : MonoBehaviour
         {
             if (groupLastNum == randomNum)
             {
-                randomNum = 1;
+                randomNum += 1;
                 RandomGroupObject(randomNum);
             }
             else
             {
                 GroupSpawned(groupPool5);
                 groupLastNum = 5;
+            }
+        }else if (randomNum == 6)
+        {
+            if (groupLastNum == randomNum)
+            {
+                randomNum += 1;
+                RandomGroupObject(randomNum);
+            }
+            else
+            {
+                GroupSpawned(groupPool6);
+                groupLastNum = 6;
+            }
+        }else if (randomNum == 7)
+        {
+            if (groupLastNum == randomNum)
+            {
+                randomNum = 1;
+                RandomGroupObject(randomNum);
+            }
+            else
+            {
+                GroupSpawned(groupPool7);
+                groupLastNum = 7;
             }
         }
 }
