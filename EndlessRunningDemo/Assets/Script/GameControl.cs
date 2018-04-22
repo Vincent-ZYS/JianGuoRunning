@@ -12,16 +12,15 @@ public class GameControl : MonoBehaviour {
     public static GameControl instance;
     public Text scoreText;
     public float scrollSpeed = -1.5f;
-    [HideInInspector]
     public Animator anim;
-    [HideInInspector]
     public Rigidbody2D rgbd;
+    public RuntimeAnimatorController[] playerAnimatorController;
 
+    private ChoosePlayer choosePlayer;
     private int score;
     private string deviceName;
     private AudioClip micRecord;
 
-	// Use this for initialization
 	void Awake () {
         if(instance == null)
         {
@@ -34,6 +33,21 @@ public class GameControl : MonoBehaviour {
 
 	void Start()
 	{
+        choosePlayer = FindObjectOfType<ChoosePlayer>().GetComponent<ChoosePlayer>();
+        switch (choosePlayer.playerAnimatorController)
+        {
+            case "banana":
+                anim.runtimeAnimatorController = playerAnimatorController[0];
+                break;
+            case "leechee":
+                anim.runtimeAnimatorController = playerAnimatorController[1];
+                break;
+            default:
+                anim.runtimeAnimatorController = playerAnimatorController[0];
+                Debug.Log("choosePlayer.playerAnimatorController String Error");
+                break;
+        }
+
         deviceName = Microphone.devices[0];
         micRecord = Microphone.Start(deviceName, true, 999, 44100);
 	}

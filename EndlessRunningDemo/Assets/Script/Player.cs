@@ -10,11 +10,12 @@ public class Player : MonoBehaviour {
     private float jumpRate = 1.0f;
     private bool isApproach = false;
 
-    public float addForce = 200.0f; 
+    public float addForce = 200.0f;
+    public Animator playerAnimator;
+    public Rigidbody2D PlayerRb2D;
 
 	void Start () {
-        GameControl.instance.rgbd = GetComponent<Rigidbody2D>();
-        GameControl.instance.anim = GetComponent<Animator>();
+
 	}
 	
 	void Update () {
@@ -35,8 +36,8 @@ public class Player : MonoBehaviour {
             if(GameControl.instance.Volume >= 0.2f && isApproach == false)
             {
                 isApproach = true;
-                GameControl.instance.rgbd.AddForce(new Vector2(0, addForce));
-                GameControl.instance.anim.SetTrigger("Jump");
+                PlayerRb2D.AddForce(new Vector2(0, addForce));
+                playerAnimator.SetTrigger("Jump");
                 //StartCoroutine(WaitForSecond());
             }
             if(timeSinceLastJump > jumpRate)
@@ -44,11 +45,12 @@ public class Player : MonoBehaviour {
                 isApproach = false;
                 timeSinceLastJump = 0;
             }
+
             //if(Input.GetMouseButtonDown(0))
             //{
-            //    GameControl.instance.rgbd.velocity = Vector2.zero;
-            //    GameControl.instance.rgbd.AddForce(new Vector2(0, addForce));
-            //    GameControl.instance.anim.SetTrigger("Jump");
+            //    PlayerRb2D.velocity = Vector2.zero;
+            //    PlayerRb2D.AddForce(new Vector2(0, addForce));
+            //    playerAnimator.SetTrigger("Jump");
             //}
         }
 	}
@@ -67,7 +69,7 @@ public class Player : MonoBehaviour {
  //       {
  //           rgbd.velocity = Vector2.zero;
  //           GameControl.instance.isOver = true;
- //           GameControl.instance.anim.SetTrigger("Die");
+ //           playerAnimator.SetTrigger("Die");
  //           //这里之所以使用单例模式，是基于面向对象思想，若将游戏结束写在这个脚本上，则会破坏flappy bird这个对象的面向对象结构
  //           GameControl.instance.BirdDie();
  //       }
