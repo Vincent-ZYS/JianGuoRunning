@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 4178133d686e24dedbaee43785a1dd08
-timeCreated: 1524328136
+guid: 5c26a3002038d40f8bb8d7fc6749dab5
+timeCreated: 1524328120
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: "\u8D31\u679C\u573A\u666F_0002s_0000_\u56FE\u5C42-16_0"
+    21300000: pot_0
+    21300002: pot_1
+    21300004: pot_2
+    21300006: pot_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -81,13 +84,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u8D31\u679C\u573A\u666F_0002s_0000_\u56FE\u5C42-16_0"
+      name: pot_0
       rect:
         serializedVersion: 2
-        x: 2365
-        y: 642
-        width: 1063
-        height: 523
+        x: 191
+        y: 1922
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pot_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 611
+        width: 1406
+        height: 1202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pot_2
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1807
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pot_3
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1195
+        width: 42
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

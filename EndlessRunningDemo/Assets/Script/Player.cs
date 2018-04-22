@@ -8,8 +8,8 @@ public class Player : MonoBehaviour {
     private float timer = 0f;
     private float timeSinceLastJump = 0f;
     private float jumpRate = 1.0f;
+    private bool isApproach = false;
 
-    public bool isApproach = false;
     public float addForce = 200.0f; 
 
 	void Start () {
