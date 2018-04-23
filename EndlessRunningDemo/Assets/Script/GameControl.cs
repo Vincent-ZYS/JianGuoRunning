@@ -33,7 +33,7 @@ public class GameControl : MonoBehaviour {
 
 	void Start()
 	{
-        choosePlayer = FindObjectOfType<ChoosePlayer>().GetComponent<ChoosePlayer>();
+            choosePlayer = FindObjectOfType<ChoosePlayer>().GetComponent<ChoosePlayer>();
         switch (choosePlayer.playerAnimatorController)
         {
             case "banana":

@@ -11,12 +11,22 @@ public class GuiController : MonoBehaviour {
     public Image AboutImage;
     public ChoosePlayer choosePlayer;
 
+    static public bool isLoad = false;
     private int aniGroupIndex = 0;
     private int aniGroupLength;
 
 
     void Start()
-    {
+    {/*
+        if (FindObjectOfType<ChoosePlayer>().GetComponent<ChoosePlayer>() == null && isLoad == false)
+        {
+            choosePlayer = new ChoosePlayer();
+            isLoad = true;
+        }
+        else
+        {
+            choosePlayer = FindObjectOfType<ChoosePlayer>().GetComponent<ChoosePlayer>();
+        }*/
         aniGroupLength = playerAnimatorController.Length;
         playerImageAnimator.runtimeAnimatorController = playerAnimatorController[aniGroupIndex];
     }
