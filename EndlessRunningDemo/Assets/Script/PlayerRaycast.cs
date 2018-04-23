@@ -9,6 +9,10 @@ public class PlayerRaycast : MonoBehaviour {
     LayerMask obstacle;
     LayerMask obstacle2;
 
+    Vector2 playerFrontStartPoint;
+    Vector2 PlayerFrontEndPoint;
+
+
 	void Start()
 	{
         obstacle = LayerMask.GetMask("obstacle");
@@ -16,8 +20,10 @@ public class PlayerRaycast : MonoBehaviour {
 	}
 
 	void Update()
-	{
-        hit2D = Physics2D.Linecast(transform.position,new Vector2(transform.position.x + 0.5f,transform.position.y + 1.7f), obstacle);
+    {
+        playerFrontStartPoint = new Vector2(transform.position.x, transform.position.y - 0.5f);
+        PlayerFrontEndPoint = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.5f);
+        hit2D = Physics2D.Linecast(playerFrontStartPoint,PlayerFrontEndPoint, obstacle);
         hit2D2 = Physics2D.Linecast(transform.position, new Vector2(transform.position.x + 0.5f, transform.position.y - 1.7f), obstacle2);
        
         if(hit2D.transform != null || hit2D2.transform != null)
@@ -26,5 +32,10 @@ public class PlayerRaycast : MonoBehaviour {
             //GameControl.instance.anim.SetTrigger("Die");
             GameControl.instance.PlayerDie();
         }
+	}
+
+	private void OnDrawGizmos()
+	{
+        Gizmos.DrawLine(playerFrontStartPoint, PlayerFrontEndPoint);
 	}
 }

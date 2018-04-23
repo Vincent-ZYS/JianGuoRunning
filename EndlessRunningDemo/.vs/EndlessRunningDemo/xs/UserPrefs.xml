@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{1045B18C-09F3-FC06-2BC1-752A9999C5CB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ChoosePlayer.cs">
     <Files>
       <File FileName="Assets/Script/Player.cs" Line="24" Column="10" />
-      <File FileName="Assets/Script/PlayerRaycast.cs" Line="21" Column="124" />
+      <File FileName="Assets/Script/PlayerRaycast.cs" Line="25" Column="101" />
       <File FileName="Assets/Script/GameControl.cs" Line="37" Column="44" />
       <File FileName="Assets/Script/ScrollingObject.cs" Line="16" Column="1" />
       <File FileName="Assets/Script/RepeatingBackground.cs" Line="17" Column="58" />
@@ -10,6 +10,7 @@
       <File FileName="Assets/Script/RandomBackgroundObject.cs" Line="19" Column="47" />
       <File FileName="Assets/Script/ScrollingSlowObject.cs" Line="9" Column="36" />
       <File FileName="Assets/Script/GuiController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/ChoosePlayer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
