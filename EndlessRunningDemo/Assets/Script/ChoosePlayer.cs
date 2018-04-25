@@ -5,9 +5,15 @@ using UnityEngine;
 public class ChoosePlayer : MonoBehaviour {
 
     public string playerAnimatorController;
+    static public bool isload = false;
 
 	void Start () {
-        GameObject.DontDestroyOnLoad(gameObject);
+        if(!isload)
+        {
+            DontDestroyOnLoad(gameObject);
+            isload = true;
+        }
+
 	}
 	
 }
