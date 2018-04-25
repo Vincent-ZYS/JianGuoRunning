@@ -12,6 +12,7 @@ public class GameControl : MonoBehaviour {
     public static GameControl instance;
     public Text scoreText;
     public float scrollSpeed = -1.5f;
+    public float spawnRate = 4.0f;
     public Animator anim;
     public Rigidbody2D rgbd;
     public RuntimeAnimatorController[] playerAnimatorController;
@@ -20,6 +21,7 @@ public class GameControl : MonoBehaviour {
     private int score;
     private string deviceName;
     private AudioClip micRecord;
+    private float timer;
 
 	void Awake () {
         if(instance == null)
@@ -59,22 +61,24 @@ public class GameControl : MonoBehaviour {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }else if(isOver == false)
         {
+            timer += Time.deltaTime;
             Volume = MaxVolume();
         }
 	}
 
-    public void BirdScore()
+    public void PlayerScore()
     {
         if(isOver == true)
         {
             return;
         }
-        score++;
+        score = -1*(int)(timer * scrollSpeed *10);
         scoreText.text = "Score:" + score.ToString();
     }
 
     public void PlayerDie()
     {
+        
         gameOverText.SetActive(true);
         isOver = true;
     }

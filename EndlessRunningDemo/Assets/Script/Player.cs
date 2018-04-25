@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-
-    private float timer = 0f;
     private float timeSinceLastJump = 0f;
     private float jumpRate = 1.0f;
     private bool isApproach = false;
+    private bool isDead = false;
+    private Collider2D playerCollider2D;
 
     public float addForce = 200.0f;
     public Animator playerAnimator;
     public Rigidbody2D PlayerRb2D;
 
 	void Start () {
-
+        playerCollider2D = GetComponent<Collider2D>();
 	}
 	
 	void Update () {
-        
+
         if(isApproach){
             timeSinceLastJump += Time.deltaTime;
         }
 
-        timer += Time.deltaTime;
-
-        if( GameControl.instance.isOver == false)
+        if(GameControl.instance.isOver == false)
         {
-            if(timer >= 4)
+            GameControl.instance.PlayerScore();
+
+            if(playerCollider2D == false || isDead == true)
             {
-                GameControl.instance.BirdScore();
-                timer = 0f;
+                playerCollider2D.enabled = true;
+                isDead = false;
             }
             if(GameControl.instance.Volume >= 0.2f && isApproach == false)
             {
@@ -52,6 +52,11 @@ public class Player : MonoBehaviour {
             //    PlayerRb2D.AddForce(new Vector2(0, addForce));
             //    playerAnimator.SetTrigger("Jump");
             //}
+        }else if(GameControl.instance.isOver == true && isDead == false) 
+        {
+            isDead = true;
+            playerCollider2D.enabled = false;
+            PlayerRb2D.AddForce(new Vector2(0,200));
         }
 	}
 

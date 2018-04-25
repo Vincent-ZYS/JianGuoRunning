@@ -790,7 +790,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1640101543}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &699196048
 MonoBehaviour:
@@ -1019,6 +1019,7 @@ MonoBehaviour:
   gameOverText: {fileID: 134933110}
   scoreText: {fileID: 1737361687}
   scrollSpeed: -3
+  spawnRate: 4
   anim: {fileID: 1439369108}
   rgbd: {fileID: 1439369105}
   playerAnimatorController:
@@ -1620,7 +1621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1640101543}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1387039297
 MonoBehaviour:
@@ -1989,7 +1990,7 @@ GameObject:
   - component: {fileID: 1489110408}
   - component: {fileID: 1489110405}
   m_Layer: 0
-  m_Name: GrassGround
+  m_Name: TableGround
   m_TagString: plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2026,8 +2027,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1755965773
-  m_SortingLayer: 3
+  m_SortingLayerID: 1504401319
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0c50e3484046b4b76b4dd888f780c8cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2145,9 +2146,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 1489110404}
+  - {fileID: 2046844128}
   - {fileID: 1387039296}
   - {fileID: 699196047}
-  - {fileID: 2046844128}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2168,7 +2169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1725665785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2182,9 +2183,9 @@ RectTransform:
   m_Father: {fileID: 699073220}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 40, y: 40}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -44, y: -44}
   m_SizeDelta: {x: 88, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1725665786
@@ -2258,7 +2259,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acf15aded7b404259a6f8bc89fdeffb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62b425d7c54e046b0a05cf6974b5a07c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2303,9 +2304,9 @@ RectTransform:
   m_Father: {fileID: 699073220}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 34.343506, y: 15}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -133, y: -34}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737361687
@@ -2505,7 +2506,7 @@ GameObject:
   - component: {fileID: 2046844130}
   - component: {fileID: 2046844129}
   m_Layer: 0
-  m_Name: GrassGround (2)
+  m_Name: TableGround2
   m_TagString: plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2522,7 +2523,7 @@ Transform:
   m_LocalScale: {x: 0.34906998, y: 0.39760998, z: 0}
   m_Children: []
   m_Father: {fileID: 1640101543}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2046844129
 BoxCollider2D:
@@ -2622,8 +2623,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1755965773
-  m_SortingLayer: 3
+  m_SortingLayerID: 1504401319
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0c50e3484046b4b76b4dd888f780c8cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
