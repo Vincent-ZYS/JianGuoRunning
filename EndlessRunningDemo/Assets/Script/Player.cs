@@ -57,6 +57,7 @@ public class Player : MonoBehaviour {
             isDead = true;
             playerCollider2D.enabled = false;
             PlayerRb2D.AddForce(new Vector2(0,200));
+            playerAnimator.SetTrigger("Die");
         }
 	}
 

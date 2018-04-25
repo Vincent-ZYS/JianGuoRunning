@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{1045B18C-09F3-FC06-2BC1-752A9999C5CB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/GameControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player.cs">
     <Files>
-      <File FileName="Assets/Script/Player.cs" Line="30" Column="13" />
-      <File FileName="Assets/Script/GameControl.cs" Line="75" Column="51" />
+      <File FileName="Assets/Script/Player.cs" Line="41" Column="51" />
+      <File FileName="Assets/Script/GameControl.cs" Line="16" Column="25" />
       <File FileName="Assets/Script/ObstaclePool.cs" Line="32" Column="27" />
       <File FileName="Assets/Script/RandomBackgroundObject.cs" Line="31" Column="32" />
       <File FileName="Assets/Script/ScrollingSlowObject.cs" Line="9" Column="36" />
       <File FileName="Assets/Script/ScrollingObject.cs" Line="16" Column="1" />
       <File FileName="Assets/Script/PlayerRaycast.cs" Line="33" Column="34" />
       <File FileName="Assets/Script/RepeatingBackground.cs" Line="17" Column="58" />
-      <File FileName="Assets/Script/GuiController.cs" Line="24" Column="19" />
+      <File FileName="Assets/Script/GuiController.cs" Line="82" Column="26" />
       <File FileName="Assets/Script/ChoosePlayer.cs" Line="8" Column="19" />
       <File FileName="Assets/Script/Column.cs" Line="11" Column="48" />
     </Files>

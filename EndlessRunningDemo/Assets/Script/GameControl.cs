@@ -78,7 +78,6 @@ public class GameControl : MonoBehaviour {
 
     public void PlayerDie()
     {
-        
         gameOverText.SetActive(true);
         isOver = true;
     }
