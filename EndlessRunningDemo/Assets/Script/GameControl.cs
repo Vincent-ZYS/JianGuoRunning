@@ -8,17 +8,18 @@ public class GameControl : MonoBehaviour {
 
     public bool isOver = false;
     public float Volume;
-    public GameObject gameOverText;
+    public GameObject gameOverMenu;
     public static GameControl instance;
     public Text scoreText;
+    public Text gameOverMenuScoreText;
     public float scrollSpeed = -1.5f;
     public float spawnRate = 4.0f;
     public Animator anim;
     public Rigidbody2D rgbd;
     public RuntimeAnimatorController[] playerAnimatorController;
+    public int score;
 
-    private ChoosePlayer choosePlayer;
-    private int score;
+
     private string deviceName;
     private AudioClip micRecord;
     private float timer;
@@ -35,19 +36,31 @@ public class GameControl : MonoBehaviour {
 
 	void Start()
 	{
-            choosePlayer = FindObjectOfType<ChoosePlayer>().GetComponent<ChoosePlayer>();
-        switch (choosePlayer.playerAnimatorController)
+        if(Time.timeScale != 1)
         {
-            case "banana":
-                anim.runtimeAnimatorController = playerAnimatorController[0];
-                break;
-            case "leechee":
-                anim.runtimeAnimatorController = playerAnimatorController[1];
-                break;
-            default:
-                anim.runtimeAnimatorController = playerAnimatorController[0];
-                Debug.Log("choosePlayer.playerAnimatorController String Error");
-                break;
+            Time.timeScale = 1;
+        }
+
+        if(ChoosePlayer.instance == null)
+        {
+            anim.runtimeAnimatorController = playerAnimatorController[0];
+            Debug.Log("ChoosePlayer.instance is null");
+        }
+        else
+        {
+            switch (ChoosePlayer.instance.playerAnimatorController)
+            {
+                case "banana":
+                    anim.runtimeAnimatorController = playerAnimatorController[0];
+                    break;
+                case "leechee":
+                    anim.runtimeAnimatorController = playerAnimatorController[1];
+                    break;
+                default:
+                    anim.runtimeAnimatorController = playerAnimatorController[0];
+                    Debug.Log("choosePlayer.playerAnimatorController String Error");
+                    break;
+            }
         }
 
         deviceName = Microphone.devices[0];
@@ -56,10 +69,7 @@ public class GameControl : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if(isOver == true && Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }else if(isOver == false)
+        if(isOver == false)
         {
             timer += Time.deltaTime;
             Volume = MaxVolume();
@@ -78,7 +88,8 @@ public class GameControl : MonoBehaviour {
 
     public void PlayerDie()
     {
-        gameOverText.SetActive(true);
+        gameOverMenu.SetActive(true);
+        gameOverMenuScoreText.text = "Score  :  " + score.ToString();
         isOver = true;
     }
 
