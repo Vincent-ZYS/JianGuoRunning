@@ -55,8 +55,10 @@ public class Player : MonoBehaviour {
         }else if(GameControl.instance.isOver == true && isDead == false) 
         {
             isDead = true;
-            playerCollider2D.enabled = false;
+            //playerCollider2D.enabled = false;
             PlayerRb2D.AddForce(new Vector2(0,200));
+            PlayerRb2D.constraints = RigidbodyConstraints2D.None;
+            PlayerRb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
             playerAnimator.SetTrigger("Die");
         }
 	}
