@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
                 playerCollider2D.enabled = true;
                 isDead = false;
             }
-            if(GameControl.instance.Volume >= 0.2f && isApproach == false)
+            if (GameControl.instance.Volume >= 0.2f && isApproach == false && Time.timeScale != 0)
             {
                 isApproach = true;
                 PlayerRb2D.AddForce(new Vector2(0, addForce));

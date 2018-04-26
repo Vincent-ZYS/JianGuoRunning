@@ -9,7 +9,9 @@ public class GuiController : MonoBehaviour {
     public RuntimeAnimatorController[] playerAnimatorController;
     public Animator playerImageAnimator;
     public Image AboutImage;
-    public ChoosePlayer choosePlayer;
+
+    [SerializeField] private GameObject mainMenuUI;
+    [SerializeField] private GameObject choosePlayerUI;
 
     static public bool isLoad = false;
     private int aniGroupIndex = 0;
@@ -17,22 +19,14 @@ public class GuiController : MonoBehaviour {
 
 
     void Start()
-    {/*
-        if (FindObjectOfType<ChoosePlayer>().GetComponent<ChoosePlayer>() == null && isLoad == false)
-        {
-            choosePlayer = new ChoosePlayer();
-            isLoad = true;
-        }
-        else
-        {
-            choosePlayer = FindObjectOfType<ChoosePlayer>().GetComponent<ChoosePlayer>();
-        }*/
+    {
         aniGroupLength = playerAnimatorController.Length;
         playerImageAnimator.runtimeAnimatorController = playerAnimatorController[aniGroupIndex];
     }
 
     private void Update()
     {
+
 #if UNITY_ANDROID
         if (Input.touchCount > 0)
         {
@@ -47,16 +41,17 @@ public class GuiController : MonoBehaviour {
             }
         }
 #endif
+
     }
 
-    public void OnStartButtonDown(){
+    public void OnGoButtonDown(){
         switch (aniGroupIndex)
         {
             case 0:
-                choosePlayer.playerAnimatorController = "banana";
+                ChoosePlayer.instance.playerAnimatorController = "banana";
                 break;
             case 1:
-                choosePlayer.playerAnimatorController = "leechee";
+                ChoosePlayer.instance.playerAnimatorController = "leechee";
                 break;
             default:
                 Debug.LogError("aniGroupIndex Error");
@@ -101,5 +96,17 @@ public class GuiController : MonoBehaviour {
     private void ChangeImageAnimatorController()
     {
         playerImageAnimator.runtimeAnimatorController = playerAnimatorController[aniGroupIndex];
+    }
+
+    public void OnStartButtonDown()
+    {
+        choosePlayerUI.SetActive(true);
+        mainMenuUI.SetActive(false);
+    }
+
+    public void OnBackToTileButtonDoen()
+    {
+        mainMenuUI.SetActive(true);
+        choosePlayerUI.SetActive(false);
     }
 }
