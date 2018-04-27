@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{1045B18C-09F3-FC06-2BC1-752A9999C5CB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Gorilla.cs">
     <Files>
       <File FileName="Assets/Script/Player.cs" Line="61" Column="76" />
       <File FileName="Assets/Script/GameControl.cs" Line="38" Column="1" />
@@ -9,10 +9,10 @@
       <File FileName="Assets/Script/ScrollingObject.cs" Line="16" Column="1" />
       <File FileName="Assets/Script/PlayerRaycast.cs" Line="33" Column="34" />
       <File FileName="Assets/Script/RepeatingBackground.cs" Line="17" Column="58" />
-      <File FileName="Assets/Script/GuiController.cs" Line="82" Column="26" />
+      <File FileName="Assets/Script/GuiController.cs" Line="82" Column="10" />
       <File FileName="Assets/Script/ChoosePlayer.cs" Line="8" Column="19" />
       <File FileName="Assets/Script/Column.cs" Line="11" Column="48" />
-      <File FileName="Assets/Script/Gorilla.cs" Line="25" Column="141" />
+      <File FileName="Assets/Script/Gorilla.cs" Line="34" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
