@@ -888,6 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ee403615eff42459b07a643ea10128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gorillaAnimator: {fileID: 369074752}
   gorillaHidePositon: {fileID: 1313888055}
   gorillaDestinationPosition: {fileID: 1439369107}
 --- !u!1 &575898945
